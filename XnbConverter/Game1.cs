@@ -61,14 +61,21 @@ namespace XnbConverter
                     tex = new Texture2D[files.Count];
                     for (int i =0; i < files.Count;i++)
                     {
-                        string f = files[i];
-                        string path = Path.GetDirectoryName(f);
-                        string fileName = Path.GetFileName(f);
-                        string Extension = Path.GetExtension(f);
-                        string fileNoExt = Path.GetFileNameWithoutExtension(f);
-                        tex[i] = Content.Load<Texture2D>(path +"\\" + fileNoExt);
-                        Stream stream = File.Create(DestDir+ "\\"+ fileNoExt + ".png");
-                        tex[i].SaveAsPng(stream, tex[i].Width, tex[i].Height);
+                        try
+                        {
+                            string f = files[i];
+                            string path = Path.GetDirectoryName(f);
+                            string fileName = Path.GetFileName(f);
+                            string Extension = Path.GetExtension(f);
+                            string fileNoExt = Path.GetFileNameWithoutExtension(f);
+                            tex[i] = Content.Load<Texture2D>(path + "\\" + fileNoExt);
+                            Stream stream = File.Create(DestDir + "\\" + fileNoExt + ".png");
+                            tex[i].SaveAsPng(stream, tex[i].Width, tex[i].Height);
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show("Conversion error:" + ex.Message);
+                        }
                         
                     }
                     break;
@@ -76,7 +83,9 @@ namespace XnbConverter
                     tex = new Texture2D[files.Count];
                     for (int i = 0; i < files.Count; i++)
                     {
-                        string f = files[i];
+                        try
+                        {
+                            string f = files[i];
                         string path = Path.GetDirectoryName(f);
                         string fileName = Path.GetFileName(f);
                         string Extension = Path.GetExtension(f);
@@ -84,8 +93,12 @@ namespace XnbConverter
                         tex[i] = Content.Load<Texture2D>(path + "\\" + fileNoExt);
                         Stream stream = File.Create(DestDir + "\\" + fileNoExt + ".jpg");
                         tex[i].SaveAsJpeg(stream, tex[i].Width, tex[i].Height);
-
                     }
+                        catch (Exception ex)
+                    {
+                        MessageBox.Show("Conversion error:" + ex.Message);
+                    }
+            }
                     break;
             }
             conversion = true;

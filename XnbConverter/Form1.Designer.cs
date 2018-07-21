@@ -30,6 +30,9 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectDestinationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.convertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -43,9 +46,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.button3 = new System.Windows.Forms.Button();
-            this.selectFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.selectDestinationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.convertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +70,27 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // selectFilesToolStripMenuItem
+            // 
+            this.selectFilesToolStripMenuItem.Name = "selectFilesToolStripMenuItem";
+            this.selectFilesToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.selectFilesToolStripMenuItem.Text = "Select Files";
+            this.selectFilesToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // selectDestinationToolStripMenuItem
+            // 
+            this.selectDestinationToolStripMenuItem.Name = "selectDestinationToolStripMenuItem";
+            this.selectDestinationToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.selectDestinationToolStripMenuItem.Text = "Select Destination";
+            this.selectDestinationToolStripMenuItem.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // convertToolStripMenuItem
+            // 
+            this.convertToolStripMenuItem.Name = "convertToolStripMenuItem";
+            this.convertToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.convertToolStripMenuItem.Text = "Convert";
+            this.convertToolStripMenuItem.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -181,30 +202,9 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(179, 33);
             this.button3.TabIndex = 9;
-            this.button3.Text = "Convert";
+            this.button3.Text = "Start Convertion";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // selectFilesToolStripMenuItem
-            // 
-            this.selectFilesToolStripMenuItem.Name = "selectFilesToolStripMenuItem";
-            this.selectFilesToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.selectFilesToolStripMenuItem.Text = "Select Files";
-            this.selectFilesToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // selectDestinationToolStripMenuItem
-            // 
-            this.selectDestinationToolStripMenuItem.Name = "selectDestinationToolStripMenuItem";
-            this.selectDestinationToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.selectDestinationToolStripMenuItem.Text = "Select Destination";
-            this.selectDestinationToolStripMenuItem.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // convertToolStripMenuItem
-            // 
-            this.convertToolStripMenuItem.Name = "convertToolStripMenuItem";
-            this.convertToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.convertToolStripMenuItem.Text = "Convert";
-            this.convertToolStripMenuItem.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -224,7 +224,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "XnbConvert";
+            this.Text = "XnbConverter";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
