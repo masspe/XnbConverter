@@ -53,9 +53,7 @@ namespace XnbConverter
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            /*   File.Copy("C:\\Users\\Maintenant Prêt\\source\\repos\\StartHunter\\StartHunter\\bin\\DesktopGL\\AnyCPU\\Debug\\Content\\Backgrounds\\Layer0_0.xnb"
-              , Application.StartupPath + "\\" + Content.RootDirectory+ "\\Layer0_0.xnb");*/
-            switch (format)
+           switch (format)
             {
                 case 0:
                     tex = new Texture2D[files.Count];
